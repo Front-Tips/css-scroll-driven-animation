@@ -1,0 +1,32 @@
+@layer components {
+  .section__text {
+    animation: 1s ease-in both;
+
+    /* animation timing linked
+     to the scroll position */
+    animation-timeline: view();
+
+    /* starting the animation when
+     the element enters the view */
+    animation-range: entry;
+  }
+
+  .section__text {
+    animation-name: blurFadeIn;
+  }
+}
+
+/* ------- Animation ------ */
+@keyframes blurFadeIn {
+  0% {
+    transform: scale(2.5);
+    opacity: 0;
+    filter: blur(5px);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
